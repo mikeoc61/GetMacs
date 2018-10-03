@@ -14,6 +14,10 @@ import os
 import sys
 import subprocess
 
+# Default network address space to search if not otherwise provided by user
+
+Default_net = '192.168.1'
+
 # Execute command to step through /24 network addresses and return result
 # In this case, we are using the ARP command to query associated MAC addreses
 
@@ -43,13 +47,13 @@ def get_macs(net):
 
      host += 1
 
-# Define a main() function that prints a little greeting.
+# Parse command line for network to be scanned or use default if not provided
 def main():
   # Get the cmd from the command line, using 'typical /24 LAN' as a fallback.
   if len(sys.argv) >= 2:
     addr = sys.argv[1]
   else:
-    addr = '192.168.1'
+    addr = Default_net
 
   print("Scanning Network: {}".format(addr))
 
