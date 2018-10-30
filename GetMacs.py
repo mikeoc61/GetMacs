@@ -1,16 +1,21 @@
-###########
-# Python3 program to scan the local area network for valid MAC addresses
-#
-# Basically does the same thing that "arp -a" but more brute force and
-# with output formatting. Only tested on MacOS and Linux.
-#
-# Date: 9/10/2017
-# Revised: 10/30/2018
-#
-##########
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+'''
++-------------------------------------------------------------------------------
++ Python3 program to scan the local area network for valid MAC addresses
++
++ Basically does the same thing that "arp -a" but more brute force and
++ with output formatting. Only tested on MacOS and Linux.
++
++ Last Update: 10/30/2018
++
++-------------------------------------------------------------------------------
+'''
 
 __author__      = "Michael E. O'Connor"
 __copyright__   = "Copyright 2018"
+__email__       = "gmikeoc@gmail.com"
 
 import os
 import sys
@@ -46,7 +51,6 @@ def get_macs(net):
     for host in range(1,255):
 
         # Cmd needs to be formatted as an array of strings
-
         cmd = f'{cmd_base} {net}.{str(host)}'.split()
         # print(f'command = {cmd}')
 
