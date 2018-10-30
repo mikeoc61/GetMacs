@@ -20,10 +20,10 @@ import subprocess
 # Default network address space to search if not otherwise provided by user
 
 Default_net = '192.168.1'
-cmd_base = ['arp']
 
 # Execute command to step through /24 network addresses and return result
 # In this case, we are using the ARP command to query associated MAC addreses
+# Format OS command depending on host platform or exit if not supported.
 
 def get_macs(net):
 
